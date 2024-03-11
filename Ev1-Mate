@@ -1,0 +1,71 @@
+using System;
+namespace Oper_Matematicas
+{
+     class Program
+    {
+        public static void Main(string[] args)
+        {
+            //Declaramos para hacer el ciclo de preguntar
+            String Repetir  ;
+
+            do
+            {
+                //Hacemos las conversiones
+                Console.WriteLine("Que deseas hacer |  (1) Sumar  (2) Restar  (3) Dividir  (4) Mulltiplicar  |");
+                string Op = Console.ReadLine();
+                int opcion = Convert.ToInt32(Op);
+
+                Console.WriteLine("|Ingrese el primer valor|");
+                string a = Console.ReadLine();
+                int val1 = Convert.ToInt32(a);
+
+                Console.WriteLine("|Ingresa el segundo valor|");
+                string b = Console.ReadLine();
+                int val2 = Convert.ToInt32(b);
+
+                Console.WriteLine("|Ingrese el tercer valor|");
+                string c = Console.ReadLine();
+                int val3 = Convert.ToInt32(c);
+
+                //Empezamos a hacer los casos de lo que 
+                switch (opcion)
+                {
+                    case 1:
+                       
+                        int suma = val1 + val2 + val3;
+                        Console.WriteLine("La suma es " + suma);
+                        break;
+
+                    case 2:
+
+                        int resta = val2 - val3 -val1;
+                        Console.WriteLine("La resta es " + resta);
+                        break;
+
+                    case 3:
+
+                        int division = val2 / val1 / val3;
+                        Console.WriteLine("La division es " + division);
+                        break;
+
+                    case 4:
+                        
+                        int multiplicacion = val3 * val2 * val1;
+                        Console.WriteLine("La multiplicacion es " + multiplicacion);
+                        break;
+
+                    default:
+                        
+                        Console.WriteLine("Gracias");
+                        break;
+
+                }
+
+                Console.WriteLine("Deseas Hacer otra operacion S/N");
+                Repetir = Console.ReadLine();
+
+            }while (Repetir == "S");
+            
+        }
+     }
+}
