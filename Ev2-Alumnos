@@ -1,0 +1,43 @@
+using System;
+using System.IO;
+
+namespace Arreglo_Estudiantes
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            String R;
+
+            do {
+                using (StreamWriter writer = new StreamWriter("estudiantes.txt", true)) {
+                    
+                    string[] nom = new string[100];
+                    int[] mat = new int[100];
+
+                    for (int i = 0; i < nom.Length; i++)
+                    {
+
+                        Console.WriteLine("Agrega los Registros\n");
+
+                        Console.WriteLine("Ingresa el nombre del estudiante");
+                        String nombre = Console.ReadLine();
+
+                        Console.WriteLine("Ingresa la matricula");
+                        String Matricula = Console.ReadLine();
+                        int matri = Convert.ToInt32(Matricula);
+                        
+                        writer.WriteLine($"Nombre: {nombre}, Matricula: {matri}");
+                        break;
+                    }
+                    Console.WriteLine("------------------------------------");
+                    Console.WriteLine("Deseas Registrar otro Alumno si/no");
+                    R = Console.ReadLine();
+                    
+                }
+            }
+
+            while (R == "si");
+        }
+    }
+}
